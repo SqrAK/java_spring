@@ -16,43 +16,42 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light color" style="background-color: #e3f2fd;">
-    <a class="navbar-brand">Spring library</a>
-    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--<span class="navbar-toggler-icon"></span>-->
-    <!--</button>-->
+    <a class="navbar-brand">Гостиница</a>
+
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/users">Users<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="/books">Books</a>
+                <a class="nav-link" href="/users">Постояльцы<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/rooms">Комнаты</a>
             </li>
         </ul>
         <div class="collapse navbar-text">
-            <span th:inline="text" style="margin-right: 20px">Hello, [[${#httpServletRequest.remoteUser}]]!</span>
+            <span th:inline="text" style="margin-right: 20px">Приветствую, [[${#httpServletRequest.remoteUser}]]!</span>
             <form th:action="@{/logout}" method="post" style="display: inline-block">
-                <button type="submit" class="btn btn-light btn-sm">Sign Out</button>
+                <button type="submit" class="btn btn-light btn-sm">Выйти</button>
             </form>
         </div>
     </div>
 </nav>
 
+
 <div class="container">
 
     <div class="starter-template">
-        <h1>A list of users</h1>
+        <h1>Список постояльцев</h1>
         <!--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>-->
         <br>
-        <button type="button" class="btn btn-primary" onclick="location.href = '/users/add';">Add user</button>
+        <button type="button" class="btn btn-primary" onclick="location.href = '/users/add';">Добавить постояльца</button>
         <br>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
                 <td>ID</td>
-                <td>Login</td>
-                <td>Password</td>
-                <td>Action</td>
+                <td>Логин</td>
+                <td>Пароль</td>
+                <td></td>
             </tr>
             </thead>
             <tbody>

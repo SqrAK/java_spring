@@ -16,20 +16,21 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light color" style="background-color: #e3f2fd;">
-    <a class="navbar-brand">Spring library</a>
+    <a class="navbar-brand">Гостиница</a>
+
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/users">Users</a>
+                <a class="nav-link" href="/users">Постояльцы</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/books">Books</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="/rooms">Комнаты</a>
             </li>
         </ul>
         <div class="collapse navbar-text">
-            <span th:inline="text" style="margin-right: 20px">Hello, [[${#httpServletRequest.remoteUser}]]!</span>
+            <span th:inline="text" style="margin-right: 20px">Приветствую, [[${#httpServletRequest.remoteUser}]]!</span>
             <form th:action="@{/logout}" method="post" style="display: inline-block">
-                <button type="submit" class="btn btn-light btn-sm">Sign Out</button>
+                <button type="submit" class="btn btn-light btn-sm">Выйти</button>
             </form>
         </div>
     </div>
@@ -38,17 +39,17 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>Add user</h1>
+        <h1>Добавление постояльца</h1>
         <!--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>-->
         <form method="post">
             <div class="form-group row">
-                <label for="username" class="col-2 col-form-label">Username</label>
+                <label for="username" class="col-2 col-form-label">Логин</label>
                 <div class="col-xs-3">
                     <input class="form-control" type="text" id="username" name="username">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="password" class="col-2 col-form-label">Password</label>
+                <label for="password" class="col-2 col-form-label">Пароль</label>
                 <div class="col-xs-3">
                     <input class="form-control" type="text" id="password" name="password">
                 </div>

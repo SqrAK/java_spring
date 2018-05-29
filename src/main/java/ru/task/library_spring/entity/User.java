@@ -14,9 +14,6 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
-    private List<Book> bookList;
-
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
     private List<Room> roomList;
 
     public User() {}
@@ -52,9 +49,6 @@ public class User {
 
     @PreRemove
     private void preRemove() {
-        for (Book s : bookList) {
-            s.setWho_take(null);
-        }
         for (Room s : roomList) {
             s.setWho_take(null);
         }
